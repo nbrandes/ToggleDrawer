@@ -84,7 +84,7 @@ struct LargeView: View {
 
 ## Parameters
 
-Toggle Drawer can be initialized with the following parameters
+ToggleDrawer can be initialized with the following parameters
 
 Required:
 * `small: CGFloat` - Visible height of the drawer in the closed state
@@ -102,10 +102,10 @@ ToggleDrawer(small: 180,
              large: 500,
              isOpen: $showDrawer,
              shadowColor: .gray,
-             shadowRadius: 15,
-             cornerRadius: 16) {
-            LargeView()
-        } smallView: {
-            SmallView()
-        }
+             shadowRadius: 8,
+             cornerRadius: 32) {
+    LargeView()
+} smallView: {
+    SmallView()
+}
 ```
