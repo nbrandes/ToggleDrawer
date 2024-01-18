@@ -30,7 +30,7 @@ public struct ToggleDrawer<Content1: View, Content2: View>: View {
     public init(small: CGFloat,
          large: CGFloat,
          isOpen: Binding<Bool>,
-         shadowColor: Color = Color(.secondarySystemBackground),
+         shadowColor: Color = Color(.clear),
          shadowRadius: CGFloat = 5,
          cornerRadius: CGFloat = 30,
          @ViewBuilder largeView: () -> Content1,
