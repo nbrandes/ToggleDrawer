@@ -27,8 +27,9 @@ public struct ToggleDrawer<Content1: View, Content2: View>: View {
     let shadowRadius: CGFloat
     let cornerRadius: CGFloat
 
-    public init(small: CGFloat,
-         large: CGFloat,
+    public init(
+         small: CGFloat? = 180,
+         large: CGFloat? = 500,
          isOpen: Binding<Bool>,
          shadowColor: Color = Color(.clear),
          shadowRadius: CGFloat = 5,
@@ -36,8 +37,8 @@ public struct ToggleDrawer<Content1: View, Content2: View>: View {
          @ViewBuilder largeView: () -> Content1,
          @ViewBuilder smallView: () -> Content2) {
         
-        self.minHeight = small
-        self.maxHeight = large
+        self.minHeight = small ?? 180
+        self.maxHeight = large ?? 500
         self.largeView = largeView()
         self.smallView = smallView()
         self._isOpen = isOpen
@@ -65,7 +66,8 @@ public struct ToggleDrawer<Content1: View, Content2: View>: View {
     public var body: some View {
         GeometryReader { geometry in
             VStack(spacing: 0) {
-                self.indicator.padding()
+                self.indicator
+                    .padding()
                 
                 if isOpen {
                     self.largeView
