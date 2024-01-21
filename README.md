@@ -15,7 +15,7 @@ A SwiftUI bottom drawer that can display separate view content based on open or 
 
 ### For Xcode Projects
 
-File > Swift Packages > Add Package Dependency: https://github.com/nbrandes/ToggleDrawer
+File > Add Package Dependencies > Enter Package URL: https://github.com/nbrandes/ToggleDrawer
 
 ### For Swift Packages
 
